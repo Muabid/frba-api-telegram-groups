@@ -17,18 +17,39 @@ router.get('/:_id', function(req, res, next) {
         throw mongoError
       collection.aggregate([
         {$match:{"chat.id":id}},
-        {$group:{"_id":{user:"$from",chat:"$chat"},
-            "messages":{"$sum":1}
+        {$group:{"_id":{user:"$from.id",chat:"$chat"},
+            "messagesCount":{"$sum":1},
+            "stickersCount":{"$sum":{$cond:[{$gte:["$sticker",null]},1,0]}},
+            "photosCount":{"$sum":{$cond:[{$gte:["$photo",null]},1,0]}},
+            "first_name":{$first:"$from.first_name"}
           }},
-        {$project: {"messages":1,"percentage":{"$multiply":[{"$divide":[100,total]},"$messages"]}}},
+        {$project: {"first_name":1,"messagesCount":1,"percentage":{"$multiply":[{"$divide":[100,total]},"$messagesCount"]}}},
         {$sort:{messages: -1}}],(mongoError, aggregationCursor) => {
         aggregationCursor.toArray((mongoError1, objects) => {
+          console.log(objects)
           res.render('index', {users:objects});
         })
       })
     });
 
   });
+
+});
+
+router.get('/',(req,res,next) =>{
+  mongo.connect((err,cli) => {
+    const db = cli.db('telegram');
+    const collection = db.collection('messages');
+    collection.aggregate([
+      {$group:{"_id":"$chat.id",
+      "messages":{$sum:1},
+      "group":{$first:"$chat.title"}}}
+    ],(mongoError,aggregationCursor) => {
+      aggregationCursor.toArray(((mongoError1, objects) => {
+        res.send(objects)
+      }))
+    })
+  })
 
 });
 
