@@ -32,4 +32,22 @@ router.get('/:_id', function(req, res, next) {
 
 });
 
+
+
+router.get('/:_id/pins', function(req, res, next) {
+
+  mongo.connect((err,cli) => {
+    const db = cli.db('telegram');
+    const collection = db.collection('messages');
+    let id = parseInt(req.params._id);
+    collection.find({"chat.id":id,"pin":1}).toArray((err,array) =>{
+      console.log(array);
+      res.render('pins',{message:array.slice(1),first_pin:array[0],chat:array[0].chat.title});
+
+    });
+
+  });
+
+});
+
 module.exports = router;
