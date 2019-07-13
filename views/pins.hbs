@@ -6,46 +6,41 @@
     <link href="/stylesheets/pins.css"  rel="stylesheet">
 </head>
 <body>
-<h1>{{chat}}</h1>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-
-                <!-- Bottom Carousel Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
-                    {{#each message}}
-                        <li data-target="#quote-carousel" data-slide-to={{@index}}></li>
-                    {{/each}}
-                </ol>
-
-                <!-- Carousel Slides / Quotes -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <p>&ldquo;{{first_pin.text}}&rdquo;</p>
-                                <small><strong>{{first_pin.from.first_name}}</strong></small>
-                            </div>
-                        </div>
-                    </div>
-                    {{#each message}}
-                        <div class="item ">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <p>&ldquo;{{text}}&rdquo;</p>
-                                    <small><strong>{{from.first_name}}</strong></small>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand">{{chat}}</a>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                        <!-- Bottom Carousel Indicators -->
+                        <ol class="carousel-indicators">
+                            {{#each messages}}
+                                <li data-target="#quote-carousel" data-slide-to={{@index}} class="{{#if @first}}active{{/if}}"></li>
+                            {{/each}}
+                        </ol>
+                        <!-- Carousel Slides / Quotes -->
+                        <div class="carousel-inner">
+                            {{#each messages}}
+                                <div class="item {{#if @first}}active{{/if}}">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <p class="h1">&ldquo;{{this.text}}&rdquo;</p>
+                                            <p><i class="glyphicon glyphicon-user"></i> <strong>{{this.from.first_name}}</strong></p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            {{/each}}
+
                         </div>
-                    {{/each}}
 
+
+                    </div>
                 </div>
-
-
             </div>
         </div>
-    </div>
-</div>
+    </main>
 </body>
