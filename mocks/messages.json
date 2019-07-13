@@ -1,0 +1,113 @@
+[
+    {
+        "_id" : "5d27d1a8275b591d8d6d8b79",
+        "message_id" : 17325,
+        "from" : {
+            "id" : 568324647,
+            "is_bot" : false,
+            "first_name" : "Re'lar",
+            "last_name" : "Baelish",
+            "username" : "RelarBaelish",
+            "language_code" : "es"
+        },
+        "chat" : {
+            "id" : -1001214086516,
+            "title" : "Proyecto: Bots Telegram",
+            "type" : "supergroup"
+        },
+        "date" : 1562854240,
+        "reply_to_message" : {
+            "message_id" : 17319,
+            "from" : {
+                "id" : 343203317,
+                "is_bot" : false,
+                "first_name" : "Julia",
+                "last_name" : "Morelli",
+                "username" : "pyritewolf",
+                "language_code" : "en"
+            },
+            "chat" : {
+                "id" : -1001214086516,
+                "title" : "Proyecto: Bots Telegram",
+                "type" : "supergroup"
+            },
+            "date" : 1562853453,
+            "text" : "Pero comparto el proyecto con un flaco y ayer le corregi un moco boludo de nomeclatura"
+        },
+        "text" : "Qué era específicamente?"
+    },
+    {
+        "_id" : "5d27d1a8275b591d8d6d8b79",
+        "message_id" : 17325,
+        "from" : {
+            "id" : 568324647,
+            "is_bot" : false,
+            "first_name" : "Re'lar",
+            "last_name" : "Baelish",
+            "username" : "RelarBaelish",
+            "language_code" : "es"
+        },
+        "chat" : {
+            "id" : -1001214086516,
+            "title" : "Proyecto: Bots Telegram",
+            "type" : "supergroup"
+        },
+        "date" : 1562854240,
+        "reply_to_message" : {
+            "message_id" : 17319,
+            "from" : {
+                "id" : 343203317,
+                "is_bot" : false,
+                "first_name" : "Julia",
+                "last_name" : "Morelli",
+                "username" : "pyritewolf",
+                "language_code" : "en"
+            },
+            "chat" : {
+                "id" : -1001214086516,
+                "title" : "Proyecto: Bots Telegram",
+                "type" : "supergroup"
+            },
+            "date" : 1562853453,
+            "text" : "Pero comparto el proyecto con un flaco y ayer le corregi un moco boludo de nomeclatura"
+        },
+        "text" : "Qué era específicamente?"
+    },
+    {
+        "_id" : "5d27d1a8275b591d8d6d8b79",
+        "message_id" : 17325,
+        "from" : {
+            "id" : 568324647,
+            "is_bot" : false,
+            "first_name" : "Re'lar",
+            "last_name" : "Baelish",
+            "username" : "RelarBaelish",
+            "language_code" : "es"
+        },
+        "chat" : {
+            "id" : -1001214086516,
+            "title" : "Proyecto: Bots Telegram",
+            "type" : "supergroup"
+        },
+        "date" : 1562854240,
+        "reply_to_message" : {
+            "message_id" : 17319,
+            "from" : {
+                "id" : 343203317,
+                "is_bot" : false,
+                "first_name" : "Julia",
+                "last_name" : "Morelli",
+                "username" : "pyritewolf",
+                "language_code" : "en"
+            },
+            "chat" : {
+                "id" : -1001214086516,
+                "title" : "Proyecto: Bots Telegram",
+                "type" : "supergroup"
+            },
+            "date" : 1562853453,
+            "text" : "Pero comparto el proyecto con un flaco y ayer le corregi un moco boludo de nomeclatura"
+        },
+        "text" : "Qué era específicamente?"
+    }
+]

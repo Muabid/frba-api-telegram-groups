@@ -40,16 +40,22 @@ router.get('/:_id', function(req, res, next) {
 
 router.get('/:_id/pins', function(req, res, next) {
 
+  // for dev purposes when you don't have the mongodb env set up
+  // const mock = require('../mocks/messages.json')
+  // res.render('pins',{messages: mock, chat:mock[0].chat.title});
   mongo.connect((err,cli) => {
     const db = cli.db('telegram');
     const collection = db.collection('messages');
-    let id = parseInt(req.params._id);
-    collection.find({"chat.id":id,"pin":1}).toArray((err,array) =>{
-      console.log(array);
-      res.render('pins',{message:array.slice(1),first_pin:array[0],chat:array[0].chat.title});
-
-    });
-
+    const id = parseInt(req.params._id);
+    collection.find({"chat.id": id, "pin": 1}).toArray((err, messages) =>
+      res.render(
+        'pins',
+        {
+          messages: messages,
+          chat: messages[0].chat.title,
+        }
+      );
+    );
   });
 
 });
